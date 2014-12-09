@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html ng-app="expenseApp">
+<head>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+</head>
+
+<body ng-controller="mainController">
+	<div class="container">
+		<div class="text-center">
+			<h3>Your Expenses <span class="label label-info">{{ expenses.length }}</span></h3>
+		</div>
+
+		<div id="expense-form" class="row">
+			<div class="col-xs-12 col-sm-4 col-sm-offset-4 well">
+				<form class="form-inline" role="form">
+					<div class="form-group">
+						<label class="sr-only" for="category">Category</label>
+						<!-- <input  type="text" class="form-control"  placeholder="Category"> -->
+						<select id="category" class="form-control" ng-model="formData.category">
+							<option>Food</option>
+							<option>Travel</option>
+							<option>Recharge</option>
+							<option>Books</option>
+							<option>Electronics</option>
+							<option>Supermarket</option>
+							<option>Entertainment</option>
+							<option>Others</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="amount">Amount</label>
+						<input id="amount" type="text" class="form-control" ng-model="formData.amount" placeholder="Amount">
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="date">Date</label>
+						<input id="date" type="datetime" class="form-control" ng-model="formData.date" placeholder="Date">
+					</div>
+					<div class="form-group">
+						<label class="sr-only" for="">Remark</label>
+						<input id="remark" type="text" class="form-control" ng-model="formData.remark" placeholder="Remarks">
+					</div>
+					<button type="submit" class="btn btn-primary" ng-click="createExpense()">Add</button>
+				</form>
+			</div>
+		</div>
+
+		<div id="expenses-list" class="row">
+			<div class="col-xs-12 col-sm-4 col-sm-offset-4 well">
+				<div class="checkbox" ng-repeat="expense in expenses">
+					<label>
+						<input type="checkbox" ng-click="deleteExpense(expense._id)">{{ expense.category }}, {{ expense.amount }}, {{ expense.date }}, {{ expense.remark }}
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		var expenseApp = angular.module('expenseApp', []);
+
+		function mainController($scope, $http) {
+			$scope.formData = {};
+
+			// on load
+			$http.get('/api/expenses')
+				.success(function(data) {
+					$scope.expenses = data;
+					console.log(data);
+				})
+				.error(function(data) {
+					console.log('Error: ' + data);
+				});
+			// add
+			$scope.createExpense = function() {
+				$http.post('/api/expenses', $scope.formData)
+					.success(function(data) {
+						$scope.formData = {};
+						$scope.expenses = data;
+						console.log(data);
+					})
+					.error(function(data) {
+						console.log('Error: ' + data);
+					});
+			};
+			// delete
+			$scope.deleteExpense = function(id) {
+				$http.delete('/api/expenses/' + id)
+					.success(function(data) {
+						$scope.expenses = data;
+						console.log(data);
+					})
+					.error(function(data) {
+						console.log('Error: ' + data);
+					});
+			};
+			// update
+			$scope.updateExpense = function(id) {
+				$http.put('/api/expenses/' + id, $scope.formData)
+					.success(function(data) {
+						$scope.formData = {};
+						$scope.expenses = data;
+						console.log(data);
+					})
+					.error(function(data) {
+						console.log('Error: ' + data);
+					});
+			};
+		}
+	</script>
+</body>
+</html>

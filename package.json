@@ -1,0 +1,21 @@
+{
+  "name": "expense-frontend",
+  "version": "0.0.1",
+  "description": "Expense Manager app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Praseetha-KR/expense-frontend.git"
+  },
+  "author": "Praseetha-KR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Praseetha-KR/expense-frontend/issues"
+  },
+  "homepage": "https://github.com/Praseetha-KR/expense-frontend",
+  "dependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-compass": "^1.0.1",
+    "grunt-contrib-uglify": "^0.6.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "expense-frontend",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Praseetha-KR/expense-frontend",
+  "authors": [
+    "Praseetha-KR <voidimagineer@yahoo.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
