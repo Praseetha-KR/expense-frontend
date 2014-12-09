@@ -64,7 +64,7 @@
 			$scope.formData = {};
 
 			// on load
-			$http.get('/api/expenses')
+			$http.get('http://localhost:3000/api/expenses')
 				.success(function(data) {
 					$scope.expenses = data;
 					console.log(data);
@@ -74,7 +74,7 @@
 				});
 			// add
 			$scope.createExpense = function() {
-				$http.post('/api/expenses', $scope.formData)
+				$http.post('http://localhost:3000/api/expenses', $scope.formData)
 					.success(function(data) {
 						$scope.formData = {};
 						$scope.expenses = data;
@@ -86,7 +86,7 @@
 			};
 			// delete
 			$scope.deleteExpense = function(id) {
-				$http.delete('/api/expenses/' + id)
+				$http.delete('http://localhost:3000/api/expenses/' + id)
 					.success(function(data) {
 						$scope.expenses = data;
 						console.log(data);
@@ -97,7 +97,7 @@
 			};
 			// update
 			$scope.updateExpense = function(id) {
-				$http.put('/api/expenses/' + id, $scope.formData)
+				$http.put('http://localhost:3000/api/expenses/' + id, $scope.formData)
 					.success(function(data) {
 						$scope.formData = {};
 						$scope.expenses = data;
