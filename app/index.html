@@ -76,11 +76,10 @@
 				<table class="table">
 					<tbody ng-repeat="expense in expenses">
 						<tr>
-							<td>{{ expense.category }}</td>
+							<td>{{ expense.category }}<br><em>{{ expense.remark }}</em></td>
 							<td>{{ expense.amount }}</td>
 							<td>{{ expense.date }}</td>
-							<td>{{ expense.remark }}</td>
-							<td><button type="submit" ng-click="deleteExpense(expense._id)" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span></button></td>
+							<td><button type="submit" ng-click="deleteExpense(expense._id)" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></td>
 						</tr>
 					</tbody>
 				</table>
@@ -88,7 +87,9 @@
 	</div>
 	<script type="text/javascript" src="/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
 	<script>
-		$('#date').datepicker();
+		$('#date').datepicker({
+			format: 'mm/dd/yyyy'
+		});
 	</script>
 	<script>
 		var expenseApp = angular.module('expenseApp', []);
@@ -120,6 +121,7 @@
 					.success(function(data) {
 						$scope.formData = {};
 						$scope.expenses = data;
+						// $window.location.href = '/';
 						console.log(data);
 					})
 					.error(function(data) {
