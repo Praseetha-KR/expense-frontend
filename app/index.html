@@ -81,7 +81,7 @@
 						<tr>
 							<td>{{ expense.category }}<br><em>{{ expense.remark }}</em></td>
 							<td>{{ expense.amount }}</td>
-							<td>{{ expense.date }}</td>
+							<td>{{ expense.date | date:'dd MMM yyyy'}}</td>
 							<td><button type="submit" ng-click="deleteExpense(expense._id)" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></td>
 						</tr>
 					</tbody>
