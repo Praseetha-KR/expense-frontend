@@ -75,33 +75,105 @@
 		</div>
 		<hr>
 		<h3><div class="label label-warning">Total: Rs. {{ getTotalExpense(expenses.length) }}</div></h3>
+		<!-- <input type="search" ng-model="q" placeholder="Filter day"> -->
+		<!-- <div aria-label="Justified button group" role="group" class="btn-group btn-group-justified">
+			<a role="button" class="btn btn-default" href="#" ng-model="q">Left</a>
+			<a role="button" class="btn btn-default" href="#" ng-model="q">Middle</a>
+			<a role="button" class="btn btn-default" href="#" ng-model="q">Right</a>
+		</div> -->
+		<select id="search-category" ng-model="q" class="form-control">
+			<option selected disabled value=''>Select Category</option>
+			<option>Food</option>
+			<option>Travel</option>
+			<option>Recharge</option>
+			<option>Books</option>
+			<option>Electronics</option>
+			<option>Supermarket</option>
+			<option>Entertainment</option>
+			<option>Others</option>
+		</select>
+		<!-- <input id="date-search" type="datetime" class="form-control" ng-model="q" placeholder="Filter Date"> -->
 		<div id="expenses-list" class="row-fluid">
 				<table class="table">
-					<tbody ng-repeat="expense in expenses">
+					<tbody ng-repeat="expense in expenses | orderBy:'date' | filter: q as results">
 						<tr>
 							<td>{{ expense.category }}<br><em>{{ expense.remark }}</em></td>
 							<td>{{ expense.amount }}</td>
-							<td>{{ expense.date | date:'dd MMM yyyy'}}</td>
+							<td>{{ expense.date }}</td>
+							<!-- <td>{{ expense.date | date:'dd MMM yyyy, EEE'}}</td> -->
 							<td><button type="submit" ng-click="deleteExpense(expense._id)" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></td>
 						</tr>
 					</tbody>
 				</table>
 		</div>
 	</div>
-	<script type="text/javascript" src="/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<!-- // <script type="text/javascript" src="/bower_components/bootstrap-datepicker/js/bootstrap-datepicker.js"></script> -->
+	<script type="text/javascript" src="/bower_components/jquery-ui/jquery-ui.min.js"></script>
 	<script>
 		$('#date').datepicker({
-			format: 'mm/dd/yyyy'
+			format: 'mm/dd/yyyy',
+			autoclose: true
 		});
+		// $('#date-search').datepicker({
+		// 	format: 'yyyy-mm-dd',
+		// 	// autoclose: true
+		// });
+		$('#date-search').datepicker();
+		$('#date-search').change(function() {
+			$(this).val($.datepicker.formatDate('yy-mm-dd', new Date()));
+			console.log($.datepicker.formatDate('dd M yy', new Date()));
+		});
+		
+		
 	</script>
 	<script>
 		var domain = '//localhost:3000';
-		angular.module('expenseApp', [])
-			.controller('mainController', function($scope, $http) {
-				$scope.formData = {};
+		var app = angular.module('expenseApp', []);
 
-				// on load
-				$http.get(domain + '/api/expenses')
+		app.filter('timeSlot', function() {
+			return function(days) {
+				var timeStart = Date.now() - (days * 86400000);
+				var timeEnd = Date.now();
+				return timeStart;
+			};
+		});
+
+		app.controller('mainController', function($scope, $http) {
+			$scope.formData = {};
+
+			// on load
+			$http.get(domain + '/api/expenses')
+				.success(function(data) {
+					$scope.expenses = data;
+					console.log(data);
+				})
+				.error(function(data) {
+					console.log('Error: ' + data);
+				});
+			// get expenses sum
+			$scope.getTotalExpense = function(len) {
+				var total = 0;
+				for (i = 0; i < len; i++) {
+					total += $scope.expenses[i].amount;
+				}
+				return total;
+			}
+			// add
+			$scope.createExpense = function() {
+				$http.post(domain + '/api/expenses', $scope.formData)
+					.success(function(data) {
+						$scope.formData = {};
+						$scope.expenses = data;
+						// $window.location.href = '/';
+						console.log(data);
+					})
+					.error(function(data) {
+						console.log('Error: ' + data);
+					});
+			};
+			// delete
+			$scope.deleteExpense = function(id) {
+				$http.delete(domain + '/api/expenses/' + id)
 					.success(function(data) {
 						$scope.expenses = data;
 						console.log(data);
@@ -109,51 +181,20 @@
 					.error(function(data) {
 						console.log('Error: ' + data);
 					});
-				// get expenses sum
-				$scope.getTotalExpense = function(len) {
-					var total = 0;
-					for (i = 0; i < len; i++) {
-						total += $scope.expenses[i].amount;
-					}
-					return total;
-				}
-				// add
-				$scope.createExpense = function() {
-					$http.post(domain + '/api/expenses', $scope.formData)
-						.success(function(data) {
-							$scope.formData = {};
-							$scope.expenses = data;
-							// $window.location.href = '/';
-							console.log(data);
-						})
-						.error(function(data) {
-							console.log('Error: ' + data);
-						});
-				};
-				// delete
-				$scope.deleteExpense = function(id) {
-					$http.delete(domain + '/api/expenses/' + id)
-						.success(function(data) {
-							$scope.expenses = data;
-							console.log(data);
-						})
-						.error(function(data) {
-							console.log('Error: ' + data);
-						});
-				};
-				// update
-				$scope.updateExpense = function(id) {
-					$http.put(domain + '/api/expenses/' + id, $scope.formData)
-						.success(function(data) {
-							$scope.formData = {};
-							$scope.expenses = data;
-							console.log(data);
-						})
-						.error(function(data) {
-							console.log('Error: ' + data);
-						});
-				};
-			});
+			};
+			// update
+			$scope.updateExpense = function(id) {
+				$http.put(domain + '/api/expenses/' + id, $scope.formData)
+					.success(function(data) {
+						$scope.formData = {};
+						$scope.expenses = data;
+						console.log(data);
+					})
+					.error(function(data) {
+						console.log('Error: ' + data);
+					});
+			};
+		});
 		
 	</script>
 </body>
