@@ -7,14 +7,3 @@
 body {
   background: #FFFFFF;
 }
-
-/* line 9, ../sass/app.scss */
-.navbar-default {
-  background-color: #FF616E;
-  border-color: #FF616E;
-}
-
-/* line 13, ../sass/app.scss */
-.well {
-  background-color: #BCCFE0;
-}
