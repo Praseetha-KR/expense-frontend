@@ -1,9 +1,29 @@
 /* line 3, ../sass/app.scss */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* line 6, ../sass/app.scss */
+/* line 8, ../sass/app.scss */
 body {
   background: #FFFFFF;
+}
+
+/* line 11, ../sass/app.scss */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* line 21, ../sass/app.scss */
+i {
+  font-family: 'FontAwesome', serif;
+  font-style: normal;
 }
