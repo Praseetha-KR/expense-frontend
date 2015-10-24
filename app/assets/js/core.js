@@ -22,11 +22,17 @@ app.factory('ExpenseFactory', [
         });
 
         return {
-            get: function() {
+            query: function() {
                 return expenseResource.query().$promise;
             },
             post: function(expense) {
                 return expenseResource.save(expense).$promise;
+            },
+            get: function(id) {
+                return expenseResource.get({id: id}).$promise;
+            },
+            patch: function(id, expense) {
+                return expenseResource.update({id: id}, expense).$promise;
             },
             delete: function(id) {
                 return expenseResource.delete({id: id}).$promise;
@@ -42,7 +48,7 @@ app.controller('ExpenseController', [
 
         $scope.expenses = {};
         function loadExpenses() {
-            ExpenseFactory.get()
+            ExpenseFactory.query()
                 .then(function(data) {
                     $scope.expenses = data;
                     console.log(data);
@@ -57,6 +63,25 @@ app.controller('ExpenseController', [
             ExpenseFactory.post(expense)
                 .then(function(data) {
                     loadExpenses();
+                    console.log(data);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        };
+        $scope.viewExpense = function(expenseId) {
+            ExpenseFactory.get(expenseId)
+                .then(function(data) {
+                    console.log(data);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        };
+        $scope.updateExpense = function(expenseId, expense) {
+            ExpenseFactory.patch(expenseId, expense)
+                .then(function(data) {
+                    $scope.viewExpense();
                     console.log(data);
                 })
                 .catch(function(error) {
