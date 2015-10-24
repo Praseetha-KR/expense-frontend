@@ -18,22 +18,29 @@
                 <nav>
                     <button type="button" class="btn btn-default" aria-label="Left Align">
                         <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-                    </button> Expenses {{hello}}
-                    <input type="text" ng-model="name">{{name}}
+                    </button> Expenses
                 </nav>
                 <hr>
-                <form action="" class="form">
+                {{expenses}}
+                <hr>
+                <form ng-submit="createExpense(expense)" class="form">
                     <div class="form-group">
                         <label for="amount" class="sr-only">Amount</label>
                         <div class="input-group">
                             <span class="input-group-addon" id="amount">&#8377;</span>
-                            <input type="text" class="form-control" placeholder="Enter amount" aria-describedby="amount">
+                            <input type="text" class="form-control" placeholder="Enter amount" aria-describedby="amount" ng-model="expense.amount">
                         </div>
                     </div>
-
+                    <div class="form-group">
+                        <label for="date" class="sr-only">Date</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="date"><span class="glyphicon glyphicon-time"></span></span>
+                            <input type="text" class="form-control" placeholder="Enter date" aria-describedby="date" ng-model="expense.date">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label for="category" class="sr-only">Category</label>
-                        <select class="selectpicker form-control" name="category" id="category">
+                        <select class="selectpicker form-control" name="category" id="category" ng-model="expense.category">
                             <option data-icon="glyphicon-road">Travel</option>
                             <option data-icon="glyphicon-cutlery">Food</option>
                             <option data-icon="glyphicon-shopping-cart">Supermarket</option>
@@ -48,8 +55,16 @@
                             <option data-icon="glyphicon-blackboard">Conferences</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="date" class="sr-only">Remarks</label>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="remarks"><span class="glyphicon glyphicon-file"></span></span>
+                            <input type="text" class="form-control" placeholder="Remarks" aria-describedby="remarks" ng-model="expense.remarks">
+                        </div>
+                    </div>
+
                     <div class="form-group text-center">
-                        <button class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
+                        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></button>
                     </div>
                 </form>
 
