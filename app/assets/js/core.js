@@ -6,7 +6,7 @@ app.config(function($httpProvider) {
     // $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
     // $httpProvider.defaults.xsrfCookieName = 'csrftoken';
     // $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
-    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/json; charset=UTF-8';
 });
 
 app.factory('ExpenseFactory', [
@@ -27,6 +27,9 @@ app.factory('ExpenseFactory', [
             },
             post: function(expense) {
                 return expenseResource.save(expense).$promise;
+            },
+            delete: function(id) {
+                return expenseResource.delete({id: id}).$promise;
             }
         };
     }
@@ -51,8 +54,17 @@ app.controller('ExpenseController', [
         loadExpenses();
         $scope.createExpense = function(expense) {
             expense.date = new Date();
-            expense.amount = 1000;
             ExpenseFactory.post(expense)
+                .then(function(data) {
+                    loadExpenses();
+                    console.log(data);
+                })
+                .catch(function(error) {
+                    console.log(error);
+                });
+        };
+        $scope.removeExpense = function(expenseId) {
+            ExpenseFactory.delete(expenseId)
                 .then(function(data) {
                     loadExpenses();
                     console.log(data);

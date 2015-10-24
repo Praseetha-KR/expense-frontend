@@ -21,8 +21,6 @@
                     </button> Expenses
                 </nav>
                 <hr>
-                {{expenses}}
-                <hr>
                 <form ng-submit="createExpense(expense)" class="form">
                     <div class="form-group">
                         <label for="amount" class="sr-only">Amount</label>
@@ -69,7 +67,21 @@
                 </form>
 
                 <hr>
-                <div class="row">
+                <div ng-repeat="expense in expenses" class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="text-right">
+                            <a href="" ng-click="removeExpense(expense._id)">
+                                <i class="glyphicon glyphicon-trash"></i>
+                            </a>
+                        </div>
+                        <div>{{ expense.date | date:'dd MMM yyyy' }}</div>
+                        <div>{{ expense.amount }}</div>
+                        <div>{{ expense.category }}</div>
+                        <div>{{ expense.remarks }}</div>
+                    </div>
+                </div>
+                <hr>
+                <!-- <div class="row">
                     <div class="col-xs-6">
                         <select class="selectpicker form-control">
                             <option value="">Today</option>
@@ -82,7 +94,7 @@
                     </div>
                 </div>
 
-                <div id="chart"></div>
+                <div id="chart"></div> -->
             </div>
         </div>
     </div>
