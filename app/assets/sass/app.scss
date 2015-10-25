@@ -1,4 +1,8 @@
+@import "vars";
 @import "compass";
+@import "layout";
+@import "themes";
+
 $primary: #FF616E;
 * {
 	box-sizing: border-box;
@@ -21,4 +25,22 @@ body {
 i {
     font-family: 'FontAwesome', serif;
     font-style: normal;
+}
+.overflow-ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.fill-light {
+    background-color: #EFEFEF;
+}
+.badge-primary {
+    background-color: #000;
+    color: white;
+}
+.red {
+    color: red;
+}
+.list-group-item {
+    border: 0;
 }

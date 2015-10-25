@@ -1,16 +1,564 @@
-/* line 3, ../sass/app.scss */
+/* Top-bottom padding */
+/* line 2, ../sass/_layout.scss */
+.no-push, .no-push-top {
+  padding-top: 0em;
+}
+
+/* line 3, ../sass/_layout.scss */
+.no-push, .no-push-bottom {
+  padding-bottom: 0em;
+}
+
+/* line 4, ../sass/_layout.scss */
+.push-1q, .push-1q-top {
+  padding-top: 0.25em;
+}
+
+/* line 5, ../sass/_layout.scss */
+.push-1q, .push-1q-bottom {
+  padding-bottom: 0.25em;
+}
+
+/* line 6, ../sass/_layout.scss */
+.push-h, .push-h-top {
+  padding-top: 0.5em;
+}
+
+/* line 7, ../sass/_layout.scss */
+.push-h, .push-h-bottom {
+  padding-bottom: 0.5em;
+}
+
+/* line 8, ../sass/_layout.scss */
+.push-3q, .push-3q-top {
+  padding-top: 0.75em;
+}
+
+/* line 9, ../sass/_layout.scss */
+.push-3q, .push-3q-bottom {
+  padding-bottom: 0.75em;
+}
+
+/* line 10, ../sass/_layout.scss */
+.push-1, .push-1-top {
+  padding-top: 1em;
+}
+
+/* line 11, ../sass/_layout.scss */
+.push-1, .push-1-bottom {
+  padding-bottom: 1em;
+}
+
+/* line 12, ../sass/_layout.scss */
+.push-1h, .push-1h-top {
+  padding-top: 1.5em;
+}
+
+/* line 13, ../sass/_layout.scss */
+.push-1h, .push-1h-bottom {
+  padding-bottom: 1.5em;
+}
+
+/* line 14, ../sass/_layout.scss */
+.push-2, .push-2-top {
+  padding-top: 2em;
+}
+
+/* line 15, ../sass/_layout.scss */
+.push-2, .push-2-bottom {
+  padding-bottom: 2em;
+}
+
+/* line 16, ../sass/_layout.scss */
+.push-2h, .push-2h-top {
+  padding-top: 2.5em;
+}
+
+/* line 17, ../sass/_layout.scss */
+.push-2h, .push-2h-bottom {
+  padding-bottom: 2.5em;
+}
+
+/* line 18, ../sass/_layout.scss */
+.push-3, .push-3-top {
+  padding-top: 3em;
+}
+
+/* line 19, ../sass/_layout.scss */
+.push-3, .push-3-bottom {
+  padding-bottom: 3em;
+}
+
+/* line 20, ../sass/_layout.scss */
+.push-4, .push-4-top {
+  padding-top: 4em;
+}
+
+/* line 21, ../sass/_layout.scss */
+.push-4, .push-4-bottom {
+  padding-bottom: 4em;
+}
+
+/* line 22, ../sass/_layout.scss */
+.push-6, .push-6-top {
+  padding-top: 6em;
+}
+
+/* line 23, ../sass/_layout.scss */
+.push-6, .push-6-bottom {
+  padding-bottom: 6em;
+}
+
+/* line 24, ../sass/_layout.scss */
+.push-8, .push-8-top {
+  padding-top: 8em;
+}
+
+/* line 25, ../sass/_layout.scss */
+.push-8, .push-8-bottom {
+  padding-bottom: 8em;
+}
+
+/* Top-bottom margin */
+/* line 28, ../sass/_layout.scss */
+.no-space, .no-space-top {
+  margin-top: 0em;
+}
+
+/* line 29, ../sass/_layout.scss */
+.no-space, .no-space-bottom {
+  margin-bottom: 0em;
+}
+
+/* line 30, ../sass/_layout.scss */
+.space-1q, .space-1q-top {
+  margin-top: 0.25em;
+}
+
+/* line 31, ../sass/_layout.scss */
+.space-1q, .space-1q-bottom {
+  margin-bottom: 0.25em;
+}
+
+/* line 32, ../sass/_layout.scss */
+.space-h, .space-h-top {
+  margin-top: 0.5em;
+}
+
+/* line 33, ../sass/_layout.scss */
+.space-h, .space-h-bottom {
+  margin-bottom: 0.5em;
+}
+
+/* line 34, ../sass/_layout.scss */
+.space-3q, .space-3q-top {
+  margin-top: 0.75em;
+}
+
+/* line 35, ../sass/_layout.scss */
+.space-3q, .space-3q-bottom {
+  margin-bottom: 0.75em;
+}
+
+/* line 36, ../sass/_layout.scss */
+.space-1, .space-1-top {
+  margin-top: 1em;
+}
+
+/* line 37, ../sass/_layout.scss */
+.space-1, .space-1-bottom {
+  margin-bottom: 1em;
+}
+
+/* line 38, ../sass/_layout.scss */
+.space-1h, .space-1h-top {
+  margin-top: 1.5em;
+}
+
+/* line 39, ../sass/_layout.scss */
+.space-1h, .space-1h-bottom {
+  margin-bottom: 1.5em;
+}
+
+/* line 40, ../sass/_layout.scss */
+.space-2, .space-2-top {
+  margin-top: 2em;
+}
+
+/* line 41, ../sass/_layout.scss */
+.space-2, .space-2-bottom {
+  margin-bottom: 2em;
+}
+
+/* line 42, ../sass/_layout.scss */
+.space-2h, .space-2h-top {
+  margin-top: 2.5em;
+}
+
+/* line 43, ../sass/_layout.scss */
+.space-2h, .space-2h-bottom {
+  margin-bottom: 2.5em;
+}
+
+/* line 44, ../sass/_layout.scss */
+.space-3, .space-3-top {
+  margin-top: 3em;
+}
+
+/* line 45, ../sass/_layout.scss */
+.space-3, .space-3-bottom {
+  margin-bottom: 3em;
+}
+
+/* line 46, ../sass/_layout.scss */
+.space-4, .space-4-top {
+  margin-top: 4em;
+}
+
+/* line 47, ../sass/_layout.scss */
+.space-4, .space-4-bottom {
+  margin-bottom: 4em;
+}
+
+/* line 48, ../sass/_layout.scss */
+.space-6, .space-6-top {
+  margin-top: 6em;
+}
+
+/* line 49, ../sass/_layout.scss */
+.space-6, .space-6-bottom {
+  margin-bottom: 6em;
+}
+
+/* Left-right padding */
+/* line 52, ../sass/_layout.scss */
+.no-pad, .no-pad-left {
+  padding-left: 0em;
+}
+
+/* line 53, ../sass/_layout.scss */
+.no-pad, .no-pad-right {
+  padding-right: 0em;
+}
+
+/* line 54, ../sass/_layout.scss */
+.pad-1q, .pad-1q-left {
+  padding-left: 0.25em;
+}
+
+/* line 55, ../sass/_layout.scss */
+.pad-1q, .pad-1q-right {
+  padding-right: 0.25em;
+}
+
+/* line 56, ../sass/_layout.scss */
+.pad-h, .pad-h-left {
+  padding-left: 0.5em;
+}
+
+/* line 57, ../sass/_layout.scss */
+.pad-h, .pad-h-right {
+  padding-right: 0.5em;
+}
+
+/* line 58, ../sass/_layout.scss */
+.pad-3q, .pad-3q-left {
+  padding-left: 0.75em;
+}
+
+/* line 59, ../sass/_layout.scss */
+.pad-3q, .pad-3q-right {
+  padding-right: 0.75em;
+}
+
+/* line 60, ../sass/_layout.scss */
+.pad-1, .pad-1-left {
+  padding-left: 1em;
+}
+
+/* line 61, ../sass/_layout.scss */
+.pad-1, .pad-1-right {
+  padding-right: 1em;
+}
+
+/* line 62, ../sass/_layout.scss */
+.pad-1h, .pad-1h-left {
+  padding-left: 1.5em;
+}
+
+/* line 63, ../sass/_layout.scss */
+.pad-1h, .pad-1h-right {
+  padding-right: 1.5em;
+}
+
+/* line 64, ../sass/_layout.scss */
+.pad-2, .pad-2-left {
+  padding-left: 2em;
+}
+
+/* line 65, ../sass/_layout.scss */
+.pad-2, .pad-2-right {
+  padding-right: 2em;
+}
+
+/* line 66, ../sass/_layout.scss */
+.pad-2h, .pad-2h-left {
+  padding-left: 2.5em;
+}
+
+/* line 67, ../sass/_layout.scss */
+.pad-2h, .pad-2h-right {
+  padding-right: 2.5em;
+}
+
+/* line 68, ../sass/_layout.scss */
+.pad-3, .pad-3-left {
+  padding-left: 3em;
+}
+
+/* line 69, ../sass/_layout.scss */
+.pad-3, .pad-3-right {
+  padding-right: 3em;
+}
+
+/* line 70, ../sass/_layout.scss */
+.pad-4, .pad-4-left {
+  padding-left: 4em;
+}
+
+/* line 71, ../sass/_layout.scss */
+.pad-4, .pad-4-right {
+  padding-right: 4em;
+}
+
+/* line 72, ../sass/_layout.scss */
+.pad-6, .pad-6-left {
+  padding-left: 6em;
+}
+
+/* line 73, ../sass/_layout.scss */
+.pad-6, .pad-6-right {
+  padding-right: 6em;
+}
+
+/* Left-right margin */
+/* line 76, ../sass/_layout.scss */
+.no-gap, .no-gap-left {
+  margin-left: 0em;
+}
+
+/* line 77, ../sass/_layout.scss */
+.no-gap, .no-gap-right {
+  margin-right: 0em;
+}
+
+/* line 78, ../sass/_layout.scss */
+.gap-1q, .gap-1q-left {
+  margin-left: 0.25em;
+}
+
+/* line 79, ../sass/_layout.scss */
+.gap-1q, .gap-1q-right {
+  margin-right: 0.25em;
+}
+
+/* line 80, ../sass/_layout.scss */
+.gap-h, .gap-h-left {
+  margin-left: 0.5em;
+}
+
+/* line 81, ../sass/_layout.scss */
+.gap-h, .gap-h-right {
+  margin-right: 0.5em;
+}
+
+/* line 82, ../sass/_layout.scss */
+.gap-3q, .gap-3q-left {
+  margin-left: 0.75em;
+}
+
+/* line 83, ../sass/_layout.scss */
+.gap-3q, .gap-3q-right {
+  margin-right: 0.75em;
+}
+
+/* line 84, ../sass/_layout.scss */
+.gap-1, .gap-1-left {
+  margin-left: 1em;
+}
+
+/* line 85, ../sass/_layout.scss */
+.gap-1, .gap-1-right {
+  margin-right: 1em;
+}
+
+/* line 86, ../sass/_layout.scss */
+.gap-1h, .gap-1h-left {
+  margin-left: 1.5em;
+}
+
+/* line 87, ../sass/_layout.scss */
+.gap-1h, .gap-1h-right {
+  margin-right: 1.5em;
+}
+
+/* line 88, ../sass/_layout.scss */
+.gap-2, .gap-2-left {
+  margin-left: 2em;
+}
+
+/* line 89, ../sass/_layout.scss */
+.gap-2, .gap-2-right {
+  margin-right: 2em;
+}
+
+/* line 90, ../sass/_layout.scss */
+.gap-2h, .gap-2h-left {
+  margin-left: 2.5em;
+}
+
+/* line 91, ../sass/_layout.scss */
+.gap-2h, .gap-2h-right {
+  margin-right: 2.5em;
+}
+
+/* line 92, ../sass/_layout.scss */
+.gap-3, .gap-3-left {
+  margin-left: 3em;
+}
+
+/* line 93, ../sass/_layout.scss */
+.gap-3, .gap-3-right {
+  margin-right: 3em;
+}
+
+/* line 94, ../sass/_layout.scss */
+.gap-4, .gap-4-left {
+  margin-left: 4em;
+}
+
+/* line 95, ../sass/_layout.scss */
+.gap-4, .gap-4-right {
+  margin-right: 4em;
+}
+
+/* line 96, ../sass/_layout.scss */
+.gap-6, .gap-6-left {
+  margin-left: 6em;
+}
+
+/* line 97, ../sass/_layout.scss */
+.gap-6, .gap-6-right {
+  margin-right: 6em;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 100, ../sass/_layout.scss */
+  .no-pad-xs {
+    padding-left: 0em;
+    padding-right: 0em;
+  }
+
+  /* line 101, ../sass/_layout.scss */
+  .pad-1-xs {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+  /* line 102, ../sass/_layout.scss */
+  .pad-2-xs {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
+/* line 105, ../sass/_layout.scss */
+.list-silent {
+  list-style-type: none;
+}
+
+/* line 108, ../sass/_layout.scss */
+.flushright {
+  float: right;
+}
+
+/* line 109, ../sass/_layout.scss */
+.flushleft {
+  float: left;
+}
+
+/* line 1, ../sass/_themes.scss */
+.fill-travel {
+  background: #64DD17;
+}
+
+/* line 4, ../sass/_themes.scss */
+.fill-food {
+  background: #FFEB3B;
+}
+
+/* line 7, ../sass/_themes.scss */
+.fill-supermarket {
+  background: #FF9800;
+}
+
+/* line 10, ../sass/_themes.scss */
+.fill-recharge {
+  background: #607D8B;
+}
+
+/* line 13, ../sass/_themes.scss */
+.fill-books {
+  background: #3F51B5;
+}
+
+/* line 16, ../sass/_themes.scss */
+.fill-entertainment {
+  background: #F44336;
+}
+
+/* line 19, ../sass/_themes.scss */
+.fill-health {
+  background: #E91E63;
+}
+
+/* line 22, ../sass/_themes.scss */
+.fill-sports {
+  background: #CDDC39;
+}
+
+/* line 25, ../sass/_themes.scss */
+.fill-gadgets {
+  background: #00BCD4;
+}
+
+/* line 28, ../sass/_themes.scss */
+.fill-family {
+  background: #009688;
+}
+
+/* line 31, ../sass/_themes.scss */
+.fill-web {
+  background: #2196F3;
+}
+
+/* line 34, ../sass/_themes.scss */
+.fill-conferences {
+  background: #795548;
+}
+
+/* line 7, ../sass/app.scss */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* line 8, ../sass/app.scss */
+/* line 12, ../sass/app.scss */
 body {
   background: #FFFFFF;
 }
 
-/* line 11, ../sass/app.scss */
+/* line 15, ../sass/app.scss */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -22,8 +570,36 @@ body {
   border: 0;
 }
 
-/* line 21, ../sass/app.scss */
+/* line 25, ../sass/app.scss */
 i {
   font-family: 'FontAwesome', serif;
   font-style: normal;
+}
+
+/* line 29, ../sass/app.scss */
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* line 34, ../sass/app.scss */
+.fill-light {
+  background-color: #EFEFEF;
+}
+
+/* line 37, ../sass/app.scss */
+.badge-primary {
+  background-color: #000;
+  color: white;
+}
+
+/* line 41, ../sass/app.scss */
+.red {
+  color: red;
+}
+
+/* line 44, ../sass/app.scss */
+.list-group-item {
+  border: 0;
 }

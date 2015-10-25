@@ -18,11 +18,12 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.1",
+    "angular": "~1.4.7",
+    "angular-resource": "~1.4.7",
+    "angularjs-datepicker": "~0.2.12",
     "bootstrap": "~3.3.5",
     "bootstrap-select": "~1.7.3",
     "c3": "~0.4.10",
-    "angular": "~1.4.7",
-    "angular-resource": "~1.4.7"
+    "jquery": "~2.1.1"
   }
 }
